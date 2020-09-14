@@ -1,1 +1,2 @@
-flumptabot2
+## flumptabot
+A discord bot I made in 7th grade using DV8FromTheWorld's Java Discord API (JDA) which supports youtube music streaming to voice channels through an embedobject-based discord message which uses reaction emojis to provide a single-message mouse-only interface to the bot. It's old I'd take it at this point as mostly just an example for other people looking to implement a dynamic discord bot with similar functionality

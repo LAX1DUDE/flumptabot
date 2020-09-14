@@ -1,0 +1,43 @@
+plugins {
+  id 'java'
+  id 'application'
+  id 'idea'
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+  mavenCentral()
+  jcenter()
+}
+
+ext.logbackVersion = '1.2.3'
+mainClassName = 'flumptabot.Main'
+
+dependencies {
+  
+  compile 'org.apache.commons:commons-lang3:3.7'
+  compile 'net.dv8tion:JDA:3.5.0_338'
+  compile 'com.sedmelluq:lavaplayer:1.2.48'
+  compile 'com.sedmelluq:jda-nas:1.0.5'
+  compile('com.google.api-client:google-api-client:1.23.0'){
+    exclude group: 'com.google.guava', module: 'guava-jdk5'
+  }
+  compile('com.google.apis:google-api-services-youtube:v3-rev192-1.23.0'){
+    exclude group: 'com.google.guava', module: 'guava-jdk5'
+  }
+  
+  compile 'org.twitter4j:twitter4j-core:[4.0,)'
+  //compile 'org.reflections:reflections:0.9.10'
+  
+  runtime "ch.qos.logback:logback-classic:$logbackVersion"
+  runtime "ch.qos.logback:logback-core:$logbackVersion"
+}
+
+jar {
+    baseName = project.name
+    manifest {
+        attributes 'Main-Class' : mainClassName
+    }
+}
